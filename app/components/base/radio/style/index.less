@@ -1,0 +1,52 @@
+@import "../../../../style/config.less";
+@radioPrefixCls: ryt-radio;
+.@{radioPrefixCls} {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block; // background-color: transparent;
+  width: @radio-width;
+  height: @radio-height;
+  outline: 0;
+  appearance: none;
+  transition: background 0.3s;
+  margin: @radio-margin; // border: 2px solid @radio-checked-bg-color;
+  // border-radius: @radius-circle;
+  background: url("../image/bg-radio@3x.png") top center no-repeat;
+  background-size: @radio-width @radio-height;
+  border: 0;
+  &:after {
+    position: absolute;
+    display: none;
+    top: 0px;
+    right: 0px;
+    width: @radio-width;
+    height: @radio-height; // border-style: solid;
+    // border-width: 0 @border-width-md @border-width-md 0;
+    content: " "; // transform: rotate(45deg);
+    // font-weight: 800;
+    // background: url("../image/bg-radio@3x.png");
+    // background-size: 38px 38px;
+  }
+
+  &:checked {
+    background: url("../image/bg-radio-on@3x.png") top center no-repeat;
+    background-size: @radio-width @radio-height; // background-color: @radio-checked-bg-color;
+  }
+
+  &:checked:after {
+    display: block;
+    border-color: #fff;
+  }
+
+  &&-disabled,
+  &&-readonly {
+    //background-color: darken(@radio-unchecked-bg-color,10%);
+    //&:checked {
+    //  background-color: lighten(@radio-checked-bg-color,30%);
+    //  &:after {
+    //    border-color: @radio-disabled-font-color;
+    //  }
+    //}
+    opacity: 0.5;
+  }
+}

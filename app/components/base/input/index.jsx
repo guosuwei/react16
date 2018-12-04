@@ -1,0 +1,11 @@
+import input from "./input.default";
+import select from "./input.select";
+import group from "./input.group";
+import textarea from "./input.textarea";
+import PureRenderHoc from "../../util/hoc";
+import "./style/index.less";
+let Input = PureRenderHoc(input);
+    Input.Select = PureRenderHoc(select);
+    Input.Textarea = PureRenderHoc(textarea);
+    Input.Group = PureRenderHoc(group);
+export default Input;

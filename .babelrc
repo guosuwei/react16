@@ -1,0 +1,25 @@
+{
+  "env": {
+    "development": {
+      "presets": ["es2015", "stage-1", "react"],
+      "plugins": ["react-hot-loader/babel","babel-plugin-dynamic-import-webpack"]
+    },
+    "test": {
+      "presets": ["es2015", "stage-1", "react"]
+    },
+    "production": {
+      "presets": [
+        [
+          "es2015",
+          {
+            "modules": false,
+            "loose": true
+          }
+        ],
+        "stage-1",
+        "react"
+      ]
+    },
+    "plugins": ["transform-runtime","babel-plugin-dynamic-import-webpack"]
+  }
+}

@@ -1,0 +1,65 @@
+@import "../../../../style/config.less";
+@segmentTabsPrefixCls: ryt-segment-tabs;
+
+.@{segmentTabsPrefixCls} {
+  overflow: hidden;
+  &-bar {
+    position: relative;
+    display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    text-align: center;
+    height: @segment-tab-height;
+    line-height: @segment-tab-height;
+    border: @border-width-sm solid @segment-tab-active-color;
+    border-radius: @segment-tab-radius;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-color: @segment-tab-bg-color;
+    margin: 0 @h-spacing-lg;
+    .ryt-segment-tabs-tab {
+      color: @segment-tab-font-color;
+      font-size: @segment-tab-font-size;
+      flex: 1;
+      -webkit-box-flex: 1;
+      -webkit-flex: 1;
+      border-right: @border-width-sm solid @segment-tab-active-color;
+      transition: all 0.4s ease-in;
+      &:last-child {
+        border-right: none;
+      }
+    }
+  }
+
+  &&-no-animation {
+    .ryt-segment-tabs-tab {
+      transition-duration: 0s;
+    }
+  }
+
+  &-tab-active {
+    &.ryt-segment-tabs-tab {
+      color: #fff;
+      background-color: @segment-tab-active-color;
+    }
+  }
+
+  &-tab-disabled {
+    &.ryt-segment-tabs-tab {
+      background-color: @fill-disabled;
+      color: @color-text-disabled;
+    }
+  }
+
+  &-content {
+    position: relative;
+    margin-top: @segment-tab-content-margin-top;
+    // .setOnePxBySide(top);
+    .ryt-segment-tabs-tabpane {
+      background-color: @segment-tab-pane-bg-color;
+      &-hidden {
+        display: none;
+      }
+    }
+  }
+}

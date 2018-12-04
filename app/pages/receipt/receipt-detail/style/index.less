@@ -1,0 +1,59 @@
+@import "../../../../style/index.less";
+.receipt-detail {
+  padding: 20px * @hd 35px * @hd;
+  &-title {
+    position: relative;
+    height: 40px * @hd;
+    padding-bottom: 20px * @hd;
+    border-bottom: 2px solid #e0e0e0;
+    > div:first-child {
+      position: absolute;
+      width: 210px * @hd;
+      height: 40px * @hd;
+      background: url(../image/logo@2x.png) no-repeat;
+      background-size: 100%;
+    }
+    > div:last-child {
+      width: 100%;
+      height: 40px * @hd;
+      line-height: 40px * @hd;
+      font-size: 26px;
+      text-align: center;
+    }
+  }
+  &-info {
+    > div {
+      display: flex;
+      justify-content: space-between;
+      > div {
+        width: 48%;
+        padding: 15px 0;
+        border-bottom: 1px solid #e0e0e0;
+        display: flex;
+        justify-content: space-between;
+        font-size: 16px;
+        > span:first-child {
+          color: #333;
+        }
+      }
+    }
+  }
+  &-tips {
+    padding: 20px * @hd 0;
+    padding-bottom: 40px * @hd;
+    font-size: 14px * @hd;
+    color: #df2305;
+  }
+  &-other {
+    border-top: 2px solid #A0A0A0;
+    padding: 25px * @hd 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px * @hd;
+  }
+}
+.receipt-detail-button {
+    padding: 0px * @hd 35px * @hd;
+    visibility:hidden;
+  }
+   

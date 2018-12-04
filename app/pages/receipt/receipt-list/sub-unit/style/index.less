@@ -1,0 +1,125 @@
+@import "../../../../../style/index.less";
+.ryt-receipt-title {
+  font-size: 18px * @hd;
+  padding: 15px * @hd 30px * @hd 10px * @hd 30px * @hd;
+  display: flex;
+  justify-content: space-between;
+  > div:last-child {
+    > span {
+      display: inline-block;
+      padding: 0 5px * @hd;
+      color: @brand-primary;
+    }
+  }
+}
+.ryt-receipt-button {
+  padding: 10px * @hd 30px * @hd;
+}
+.ryt-receipt {
+  height: 600px;
+  overflow: auto;
+  > div:last-child {
+    margin-bottom: 20px;
+  }
+  &-list {
+    &-num {
+      color: #666666;
+      font-size: 14px * @hd;
+      padding: 10px * @hd 0 5px * @hd 60px * @hd;
+    }
+    &-info {
+      display: flex;
+      padding-left: 30px * @hd;
+      .info {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px * @hd 30px * @hd;
+        flex: 1;
+        border-radius: 8px * @hd;
+        background: #f7f7f7;
+        // border: #d1d1d1 1px dashed;
+        > div {
+          flex: 1;
+          text-align: center;
+        }
+        > div:last-child,
+        > div:first-child {
+          span,
+          b,
+          p {
+            display: block;
+          }
+          span {
+            font-size: 16px * @hd;
+            padding-bottom: 8px * @hd;
+            padding-top: 3px * @hd;
+            color: #666;
+          }
+          div {
+            font-size: 20px * @hd;
+            padding-bottom: 2px * @hd;
+          }
+          p {
+            font-size: 14px * @hd;
+            color: #666;
+          }
+        }
+        > div:first-child {
+          text-align: left;
+        }
+        > div:last-child {
+          text-align: right;
+        }
+        &-arrow {
+          width: 233px * @hd;
+          height: 100px * @hd;
+          background: url(../image/arrow@2x.png) center center no-repeat;
+          background-size: 100%;
+          align-items: center;
+          > span {
+            color: #d5750e;
+            font-size: 20px * @hd;
+            padding-top: 10px;
+            display: block;
+          }
+          > p {
+            margin: 0;
+            padding: 0;
+            padding-top: 22px;
+            font-size: @font-size-base;
+          }
+        }
+      }
+      .check {
+        width: 76px * @hd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        > i {
+          display: block;
+          width: 30px * @hd;
+          height: 30px * @hd;
+          fill: currentColor;
+          background: url(../image/check_off@2x.png);
+          background-size: 100%;
+        }
+      }
+    }
+  }
+  &-list-check {
+    .ryt-receipt-list-info {
+      .info {
+        background: #f0f6fd;
+      }
+    }
+    .ryt-receipt-list-info {
+      .check {
+        > i {
+          background: url(../image/check@2x.png);
+          background-size: 100%;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+@import "../../../../style/config.less";
+
+@nGridsPrefixCls: ryt-grids;
+
+.@{nGridsPrefixCls} {
+  background-color:@fill-base;
+  &-flex {
+    .setOnePxBySide(bottom);
+  }
+  &-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .setOnePxBySide(right);
+    height: @grid-item-height;
+    &-text {
+      font-size: @font-size-caption-sm;
+      color: @color-text-base;
+      margin-top: @h-spacing-sm;
+    }
+
+    &:last-child:after {
+      border: none;
+    }
+  }
+
+  &&-no-border {
+    .ryt-grids-flex:after {
+      border: none;
+    }
+    .ryt-grids-item:after {
+      border: none;
+    }
+  }
+}

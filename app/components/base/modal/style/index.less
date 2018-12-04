@@ -1,0 +1,333 @@
+@import "../../../../style/config.less";
+@modalPrefixCls: ryt-modal;
+.@{modalPrefixCls} {
+  position: relative;
+  &-mask {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: @modal-mask-z-index;
+    background-color: @modal-mask-bg-color;
+    &-hidden {
+      display: none;
+    }
+  }
+
+  &-wrap {
+    position: fixed;
+    //height: 100%;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    // transform: translate(0, 100%);
+    z-index: @modal-mask-z-index;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    -webkit-overflow-scrolling: touch;
+    backface-visibility: hidden;
+    outline: 0;
+    transition: transform 0.3s;
+    &.ryt-modal-action-sheet-wrap {
+      align-items: flex-end;
+    }
+    &&.ryt-modal-full-screen {
+      height: 100%;
+    }
+  }
+
+  &&-page {
+    width: 100%;
+    height: 100%;
+  }
+
+  &&-alert {
+    margin: 0  @modal-alert-width;
+    height: auto;
+    & .ryt-modal-content {
+      border-radius: @modal-alert-radius;
+      height: auto;
+      & .ryt-modal-body {
+        color: @modal-font-color;
+        font-size: @modal-alert-font-size;
+        .ryt-modal-alert-box {
+          overflow: hidden;
+          word-break: break-all;
+          padding: @h-spacing-md 0;
+          &-title {
+            font-size: @modal-title-font-size;
+            // font-weight: bold;
+            color: @modal-title-font-color;
+            padding: @modal-alert-padding / 1.2 @modal-alert-padding / 1.2 0
+              @modal-alert-padding / 1.2;
+            // border-bottom: 1px solid @border-color-base;
+            // text-align: left;
+          }
+          &-middle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: @v-spacing-sm 0;
+            padding: 0 @modal-alert-padding;
+            span {
+              margin-left: @h-spacing-md;
+              font-size: @font-size-heading;
+            }
+          }
+          &-content {
+            margin: @h-spacing-lg 0;
+            padding: 0 @v-spacing-xl;
+            color: @modal-content-font-color;
+            font-size: @modal-content-font-size;
+          }
+        }
+      }
+    }
+  }
+
+  &&-action-sheet {
+    width: 100%;
+    height: auto;
+    .ryt-modal-content {
+      background-color: #f9f9f9;
+    }
+    .ryt-modal-btn {
+      color: @color-link!important;
+    }
+    .ryt-modal-btn::last-child {
+      color: @color-link!important;
+    }
+  }
+
+  &-content {
+    position: relative;
+    background-color: @modal-bg-color;
+    border: 0;
+    background-clip: padding-box;
+    text-align: center;
+    height: 100%;
+  }
+
+  &-body {
+    height: 100%;
+    font-size: @modal-font-size;
+    color: @modal-font-color;
+  }
+
+  .modal-btn() {
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    color: @color-link;
+    font-size: @modal-btn-font-size;
+    padding: @modal-alert-padding / 1.2;
+    background-color: @modal-bg-color;
+    border: 0;
+    border-bottom-left-radius: @modal-alert-radius;
+    position: relative;
+    .ellipsis();
+    &.Tappable-active {
+      background-color: darken(@modal-bg-color, 20%);
+    }
+  }
+
+  .ryt-modal-btn-group-horizon {
+    position: relative;
+    .setOnePxBySide(top);
+    display: flex;
+    .ryt-modal-btn {
+      flex: 1;
+      -webkit-flex: 1;
+      .modal-btn();
+      + .ryt-modal-btn {
+        // .setOnePxBySide(left);
+        border-bottom-left-radius: 0;
+      }
+      &:last-child {
+        color: @color-text-caption;
+        border-bottom-right-radius: @modal-alert-radius;
+        border-left: 1px solid @border-color-base;
+      }
+    }
+  }
+
+  .ryt-modal-btn-group-vertical {
+    display: flex;
+    flex-direction: column;
+    .ryt-modal-btn {
+      flex: 1;
+      -webkit-flex: 1;
+      .modal-btn();
+      .setOnePxBySide(top);
+      &:last-child {
+        color: @color-text-base!important;
+        border-bottom-left-radius: @modal-alert-radius;
+        border-bottom-right-radius: @modal-alert-radius;
+      }
+    }
+  }
+  &&-alert {
+    .ryt-modal-btn-group-vertical {
+      display: flex;
+      flex-direction: column;
+      .ryt-modal-btn {
+        flex: 1;
+        -webkit-flex: 1;
+        .modal-btn();
+        .setOnePxBySide(top);
+        &:last-child {
+          color: @color-link !important;
+          border-bottom-left-radius: @modal-alert-radius;
+          border-bottom-right-radius: @modal-alert-radius;
+        }
+      }
+    }
+  }
+}
+.select-box {
+  max-height: 464px * @hd;
+  overflow-y: auto;
+  &-list {
+    background: #fff;
+    .current{
+      color: @brand-primary;
+    }
+    > span {
+      > div {
+        padding: @v-spacing-md @h-spacing-md;
+        text-align: center;
+        font-size: @font-size-caption;
+        border-bottom: 1px solid #e5e5e5;
+      }
+      > div.selected {
+        color: @brand-primary;
+      }
+    }
+  }
+  &-close {
+    border-top: @h-spacing-sm solid #e5e5e5;
+    background: #fff;
+    text-align: center;
+    font-size: @font-size-caption;
+    > span {
+      display: block;
+      width: 100%;
+      padding: @v-spacing-md 0;
+      font-size: @font-size-caption;
+    }
+  }
+}
+
+/**--------------------------------------------------------------------=====
+  * fadeIn
+  **/
+  .fadeIn-enter {
+    opacity: 0;
+    .motion-common(0.2s);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+  
+  .fadeIn-appear {
+    opacity: 0;
+    .motion-common(0.1s);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+  
+  .fadeIn-leave {
+    .motion-common(0.1s);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.1);
+    animation-play-state: paused;
+  }
+  
+  .fadeIn-enter.fadeIn-enter-active {
+    animation-name: fadeIn;
+    animation-play-state: running;
+  }
+  
+  .fadeIn-appear.fadeIn-appear-active {
+    animation-name: fadeIn;
+    animation-play-state: running;
+  }
+  
+  .fadeIn-leave.fadeIn-leave-active {
+    animation-name: amFadeOut;
+    animation-play-state: running;
+  }
+  
+  /**--------------------------------------------------------------------=====
+    * fadeInUp
+    **/
+  .fadeInUp-enter {
+    opacity: 0;
+    .motion-common(0.3s);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+  
+  .fadeInUp-appear {
+    opacity: 0;
+    .motion-common(0.3s);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+  
+  .fadeInUp-leave {
+    .motion-common(0.3s);
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-play-state: paused;
+  }
+  
+  .fadeInUp-enter.fadeInUp-enter-active {
+    animation-name: fadeInUp;
+    animation-play-state: running;
+  }
+  
+  .fadeInUp-appear.fadeInUp-appear-active {
+    animation-name: fadeInUp;
+    animation-play-state: running;
+  }
+  
+  .fadeInUp-leave.fadeInUp-leave-active {
+    animation-name: fadeInDn;
+    animation-play-state: running;
+  }
+  
+  /**--------------------------------------------------------------------=====
+    * motion-common
+    **/
+  .motion-common(@time-s) {
+    animation-duration: @time-s;
+    animation-fill-mode: both;
+  }
+  .make-motion(@className, @keyframeName) {
+    .@{className}-enter {
+      .motion-common();
+      animation-play-state: paused;
+    }
+    .@{className}-appear {
+      .motion-common();
+      animation-play-state: paused;
+    }
+    .@{className}-leave {
+      .motion-common();
+      animation-play-state: paused;
+    }
+    .@{className}-enter.@{className}-enter-active {
+      animation-name: ~"@{keyframeName}In";
+      animation-play-state: running;
+    }
+    .@{className}-leave.@{className}-leave-active {
+      animation-name: ~"@{keyframeName}Out";
+      animation-play-state: running;
+    }
+    .@{className}-appear.@{className}-appear-active {
+      animation-name: ~"@{keyframeName}In";
+      animation-play-state: running;
+    }
+  }

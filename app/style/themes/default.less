@@ -1,0 +1,247 @@
+/* ------------------ 默认主题 ------------------ */
+// 基本单位
+@hd: 1px;
+// 色彩
+// ---
+// 文字色
+@color-text-base: #222; // 基本
+@color-text-base-inverse: #fff; // 基本 - 反色
+@color-text-secondary: #a4a9b0; // 辅助色
+@color-text-placeholder: #bbb; // 文本框提示
+@color-text-disabled: #bbb; // 失效
+@color-text-caption: #888; // 辅助描述
+@color-text-paragraph: #333; // 段落
+@color-link: @brand-primary; // 链接
+// 字体
+@rytFontEN: -apple-system-font, "Helvetica Neue";
+@rytFontCN: "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei";
+@rytFontSans: sans-serif;
+@rytFontDefault: @rytFontEN, @rytFontSans;
+
+// 背景色
+@fill-base: #fff; // 组件默认背景
+@fill-body: #f5f5f9; // 页面背景
+@fill-tap: #ddd; // 组件默认背景 - 按下
+@fill-disabled: #ddd; // 通用失效背景
+@fill-mask: rgba(0, 0, 0, 0.4); // 遮罩背景
+@color-icon-base: #ccc; // 许多小图标的背景，比如一些小圆点，加减号
+@fill-grey: #f7f7f7;
+
+// 透明度
+@opacity-disabled: 0.3; // switch checkbox radio 等组件禁用的透明度
+
+// 全局/品牌色
+@brand-primary: #0562D8;
+@brand-primary-tap: rgb(3, 86, 195);
+@brand-success: #6abf47;
+@brand-warning: #ffc600;
+@brand-error: #f4333c;
+@brand-important: #ff5b05; // 用于小红点
+@brand-wait: #108ee9;
+@brand-gray: #e9e9e9;
+
+// 边框色
+@border-color-base: #ddd;
+
+// 字体尺寸
+// ---
+@font-size-icontext: 10 * @hd;
+@font-size-caption-sm: 12 * @hd;
+@font-size-base: 14 * @hd;
+@font-size-subhead: 15 * @hd;
+@font-size-caption: 16 * @hd;
+@font-size-heading: 17 * @hd;
+
+// 圆角
+// ---
+@radius-xs: 2 * @hd;
+@radius-sm: 3 * @hd;
+@radius-md: 5 * @hd;
+@radius-lg: 7 * @hd;
+@radius-circle: 50%;
+
+// 边框尺寸
+// ---
+@border-width-sm: 1 * @hd;
+@border-width-md: 1;
+@border-width-lg: 2 * @hd;
+
+// 间距
+// ---
+// 水平间距
+@h-spacing-sm: 5 * @hd;
+@h-spacing-md: 10 * @hd;
+@h-spacing-lg: 15 * @hd;
+
+// 垂直间距
+@v-spacing-xs: 3 * @hd;
+@v-spacing-sm: 6 * @hd;
+@v-spacing-md: 9 * @hd;
+@v-spacing-lg: 15 * @hd;
+@v-spacing-xl: 21 * @hd;
+@v-spacing-xxl: 30 * @hd;
+
+// 高度
+// ---
+@line-height-base: 1; // 单行行高
+@line-height-paragraph: 1.5; // 多行行高
+
+// 图标尺寸
+// ---
+@icon-size-xxs: 15 * @hd;
+@icon-size-xs: 18 * @hd;
+@icon-size-sm: 21 * @hd;
+@icon-size-md: 22 * @hd; // 导航条上的图标、grid的图标大小
+@icon-size-l: 25 * @hd;
+@icon-size-xl: 30 * @hd;
+@icon-size-lg: 36 * @hd;
+@icon-size-big: 72 * @hd;
+
+/* ------------ actionsheet 动作面板 ------------ */
+@actionsheetTitle-H: 50 * @hd;
+/* ------------ badge 徽标 ------------ */
+@badge-bg-color: @brand-important;
+@badge-dot-size: 8 * @hd;
+@badge-size: 16 * @hd;
+@badge-text-size: @font-size-icontext;
+@badge-text-small-size: @font-size-icontext;
+@badge-text-small-font-size: @font-size-icontext;
+@badge-text-color: @color-text-base-inverse;
+/* ------------ button 按钮 ------------ */
+//高度
+@button-height: 43 * @hd;
+@button-height-sm: 30 * @hd;
+//字号
+@button-font-size: @font-size-subhead;
+@button-font-size-sm: @font-size-caption-sm;
+//圆角
+@button-radius: @radius-sm;
+//背景色（主要）
+@primary-button-fill: @brand-primary;
+@primary-button-fill-tap: @brand-primary-tap;
+@primary-button-fill-disabled: @fill-disabled;
+//背景色（幽灵）
+@ghost-button-color: @brand-primary; // 同时应用于背景、文字颜色、边框色
+@ghost-button-border-color: @brand-primary;
+@ghost-button-fill-tap: fade(@brand-primary, 60%);
+//背景色（警告）
+@warning-button-fill: @brand-warning;
+@warning-button-fill-tap: fade(@brand-warning, 60%);
+//背景色（链接）
+@link-button-fill-tap: @fill-tap;
+@link-button-font-size: @font-size-subhead;
+@across-button-height: 100; // 通栏按钮高度
+
+/* ------------ checkbox 单选框 ------------ */
+@checkbox-height: 18 * @hd;
+@checkbox-width: 18 * @hd;
+@checkbox-radius: @radius-sm;
+@checkbox-margin: 0;
+@checkbox-unchecked-bg-color: @fill-base;
+@checkbox-checked-bg-color: @brand-primary;
+@checkbox-disabled-bg: @color-text-disabled;
+@checkbox-disabled-font-color: @color-text-disabled;
+@ryt-checkbox-agree-label-left: @icon-size-md+ @v-spacing-md;
+@ryt-checkbox-agree-label-font-size: @font-size-base;
+
+/* ------------ cell 列表 ------------ */
+@cell-min-height: 44 * @hd;
+@cell-wings: @h-spacing-lg;
+@cell-group-header-padding: @h-spacing-md;
+@cell-group-header-font-size: @font-size-base;
+@cell-group-header-font-color: @color-text-caption;
+@cell-padding: @v-spacing-xs @cell-wings;
+@cell-background-color: @fill-base;
+@cell-title-font-size: @font-size-subhead;
+@cell-title-font-color: @color-text-base;
+@cell-title-sub-font-size: @font-size-base;
+@cell-title-sub-font-color: @color-text-caption;
+@cell-description-font-size: @font-size-base;
+@cell-description-font-color: @color-text-paragraph;
+@cell-description-sub-font-size: @font-size-caption-sm;
+@cell-description-sub-font-color: @color-text-caption;
+@cell-arrow-size: @icon-size-md;
+@cell-arrow-margin-left: @h-spacing-sm;
+@cell-arrow-color: @color-text-caption;
+
+/* ------------ modal 对话框 ------------ */
+@modal-mask-z-index: 1100;
+@modal-mask-bg-color: rgba(0, 0, 0, 0.6);
+@modal-bg-color: @fill-base;
+@modal-content-font-color: @color-text-caption;
+@modal-font-size: @font-size-base;
+@modal-title-font-size: @font-size-caption;
+@modal-content-font-size: @font-size-base;
+@modal-btn-font-size: @font-size-caption;
+@modal-font-color: @color-text-paragraph;
+@modal-title-font-color: @color-text-paragraph;
+@modal-alert-width: 50 * @hd;
+@modal-alert-radius: @radius-md;
+@modal-alert-padding: @v-spacing-lg;
+@modal-alert-font-size: @font-size-base;
+@modal-alert-radius: @radius-md;
+
+/* ------------ Msg 结果页 ------------ */
+@rytMsgPaddingTop: 80 * @hd;
+@rytMsgIconGap: 30 * @hd;
+@rytMsgTitleGap: 5 * @hd;
+@rytMsgTextGap: 25 * @hd;
+@rytMsgOprGap: 25 * @hd;
+@rytMsgExtraAreaGap: 15 * @hd;
+@rytMsgExtraAreaOfMinHeight: 438 * @hd;
+
+/* ------------ Toast 轻提示 ------------ */
+@toast-mask-z-index: 1200;
+@toast-mask-margin-top: -60 * @hd;
+@toast-padding: @v-spacing-lg @h-spacing-lg;
+@toast-border-radius: @radius-md;
+@toast-color: @color-text-base-inverse;
+@toast-bg-color: rgba(0, 0, 0, 0.5);
+@toast-font-size: @font-size-base;
+@toast-line-height: @font-size-base;
+@toast-icon-size: @icon-size-xl;
+@toast-icon-margin-bottom: @h-spacing-md;
+@toast-toptips-height: 45 * @hd;
+
+/* ------------ Input 表单 ------------ */
+@input-list-height: 44 * @hd;
+@input-list-title-size: @font-size-base;
+@input-list-title-color: @color-text-base;
+@input-list-bg-color: @fill-base;
+@input-label-font-color: #333; //InputItem左侧标题-字色
+@input-label-font-size: @font-size-base; //InputItem左侧标题-字号
+@input-right-font-color: @color-text-caption; //InputItem右侧标题-字色
+@input-right-font-size: @font-size-subhead; //InputItem右侧标题-字号
+@input-label-width: 16 * @hd; // InputItem、TextareaItem 文字长度基础值
+@input-font-size: @font-size-base; // InputItem框内字号
+@input-color-icon: @color-icon-base; // input clear icon 的背景色
+@input-color-icon-tap: @brand-primary; //input clear icon 的点击色
+
+/* ------------ radio 单选框 ------------ */
+@radio-height: 22 * @hd;
+@radio-width: 22 * @hd;
+@radio-radius: @radius-circle;
+@radio-margin: 0;
+@radio-unchecked-bg-color: @fill-base;
+@radio-checked-bg-color: @brand-primary;
+@radio-disabled-bg: @color-text-disabled;
+@radio-disabled-font-color: @color-text-disabled;
+
+/* ------------ switch 表单 ------------ */
+@switch-height: 32 * @hd;
+@switch-width: 52 * @hd;
+@switch-radius: 32 * @hd;
+@switch-circle-color: @fill-base;
+@switch-border-color: @border-color-base;
+@switch-unchecked-bg-color: @color-text-disabled;
+@switch-checked-bg-color: #4dd865;
+
+/* ------------ grid 宫格 ------------ */
+@grid-item-height: 90 * @hd;
+
+/* ------------ tab-bar 底部标签栏 ------------ */
+@tab-bar-height: 50 * @hd;
+@tab-bar-font-color: @color-text-caption;
+@tab-bar-active-font-color: @brand-primary;
+@tab-bar-pane-bg-color: transparent;
+@tab-bar-bg-color: @fill-base;

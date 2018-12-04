@@ -1,0 +1,96 @@
+@import "../../../../style/config.less";
+
+@toastPrefixCls: ryt-toast;
+@topTipsPrefixCls: ryt-toptips;
+.@{toastPrefixCls} {
+  position: fixed;
+  z-index: @toast-mask-z-index;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .ryt-am(0.2s, fadeIn);
+  &-notice {
+    margin-top: -60px;
+  }
+  &-wrap {
+    display: inline-block;
+    padding: @toast-padding;
+    color: @toast-color;
+    background-color: fade(@toast-bg-color, 60%);
+    border-radius: @toast-border-radius;
+    font-size: @toast-font-size;
+    line-height: @toast-line-height;
+    text-align: center;
+    .ryt-icon {
+      color: @toast-color;
+      font-size: @toast-icon-size;
+      margin-bottom: @toast-icon-margin-bottom;
+    }
+  }
+}
+.@{topTipsPrefixCls} {
+  // margin: 0 20px;
+  position: fixed;
+  z-index: @toast-mask-z-index;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  .ryt-am(0.2s, topTipsUpToDn);
+  word-wrap: break-word;
+  word-break: break-all;
+  > span {
+    display: block;
+    width: 100%;
+  }
+  &-notice-content {
+    padding: 0 @h-spacing-md;
+    > div {
+      // width: 100%;
+      border-radius: @radius-sm;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      height: @toast-toptips-height;
+      font-size: @font-size-base;
+      > i {
+        margin-right: @h-spacing-md;
+      }
+      // > i:last-child {
+      //   display: inline-block;
+      //   position: absolute;
+      //   right: 0px;
+      // }
+    }
+    .@{topTipsPrefixCls}-info {
+      background-color: @brand-primary;
+      color: @color-text-base-inverse;
+    }
+    .@{topTipsPrefixCls}-tips {
+      background-color: @brand-primary;
+      color: @color-text-base-inverse;
+    }
+    .@{topTipsPrefixCls}-success {
+      background-color: @brand-success;
+      color: @color-text-base-inverse;
+    }
+    .@{topTipsPrefixCls}-error {
+      background-color: @brand-error;
+      color: @color-text-base-inverse;
+    }
+    .@{topTipsPrefixCls}-warning {
+      background-color: @brand-warning;
+      color: @color-text-base-inverse;
+    }
+  }
+}

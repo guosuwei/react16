@@ -1,0 +1,182 @@
+@import "../../../../style/config.less";
+@buttonPrefixCls: ryt-button;
+@tappableActivePrefixCls: Tappable-active;
+.@{buttonPrefixCls} {
+  display: block;
+  outline: 0 none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  padding: 0;
+  text-align: center;
+  font-size: @button-font-size;
+  height: @button-height;
+  line-height: @button-height;
+  border-radius: @button-radius;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  white-space: nowrap; // default
+  color: @color-text-base;
+  background-color: @fill-base;
+  border: @border-width-sm solid @border-color-base; // &:active, // uc browser not work normal
+  &&-active {
+    background-color: @fill-tap;
+  }
+  &&-disabled {
+    color: fade(@color-text-base, 30%);
+    opacity: 0.6;
+  }
+
+  &-primary {
+    color: @color-text-base-inverse;
+    background-color: @primary-button-fill;
+    border: @border-width-sm solid @primary-button-fill; // &:active, // uc browser not work normal
+    &.@{buttonPrefixCls}-active {
+      color: fade(@color-text-base-inverse, 30%);
+      background-color: @primary-button-fill-tap;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@color-text-base, 30%);
+      background: @primary-button-fill-disabled; // opacity: 0.4;
+      border: 0;
+    }
+  }
+
+  &-ghost {
+    color: @ghost-button-color;
+    background-color: @fill-base;
+    border: @border-width-sm solid @ghost-button-border-color; // &:active, // uc browser not work normal
+    &.@{buttonPrefixCls}-active {
+      color: @ghost-button-fill-tap;
+      background-color: @fill-base;
+      border-color: @ghost-button-border-color;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@color-text-base, 10%);
+      border-color: fade(@color-text-base, 10%);
+      opacity: 1; // override default opacity: 0.6
+    }
+  }
+  &-ghost-dot {
+    color: @ghost-button-color;
+    background-color: @fill-base;
+    border: @border-width-sm dashed @ghost-button-border-color; // &:active, // uc browser not work normal
+    &.@{buttonPrefixCls}-active {
+      color: @ghost-button-fill-tap;
+      background-color: @fill-base;
+      border-color: @ghost-button-border-color;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@color-text-base, 10%);
+      border-color: fade(@color-text-base, 10%);
+      opacity: 1; // override default opacity: 0.6
+    }
+  }
+  &-link {
+    color: @ghost-button-color;
+    background-color: initial;
+    border: 0; // &:active, // uc browser not work normal
+    &.@{buttonPrefixCls}-active {
+      color: @ghost-button-fill-tap;
+      background-color: initial;
+      border-color: @ghost-button-border-color;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@color-text-base, 10%);
+      border-color: fade(@color-text-base, 10%);
+      opacity: 1; // override default opacity: 0.6
+    }
+  }
+  &-default-dot {
+    color: @color-text-base;
+    background-color: @fill-base;
+    border: @border-width-sm dashed @border-color-base; // &:active, // uc browser not work normal
+    &.@{buttonPrefixCls}-active {
+      color: @ghost-button-fill-tap;
+      background-color: @fill-base;
+      border-color: @border-color-base;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@color-text-base, 10%);
+      border-color: fade(@color-text-base, 10%);
+      opacity: 1; // override default opacity: 0.6
+    }
+  }
+
+  &-warning {
+    color: @color-text-base-inverse;
+    border-color: @warning-button-fill;
+    background-color: @warning-button-fill; // &:active, // uc browser not work normal
+    &.@{buttonPrefixCls}-active {
+      color: fade(@color-text-base-inverse, 30%);
+      background-color: @warning-button-fill-tap;
+      border-color: @warning-button-fill-tap;
+    }
+    &.@{buttonPrefixCls}-disabled {
+      color: fade(@color-text-base-inverse, 60%);
+      opacity: 0.4;
+    }
+  }
+  &,
+  &-primary,
+  &-ghost,
+  &-warning {
+    &.@{buttonPrefixCls}-across {
+      border-radius: 0;
+      border-left: 0;
+      border-right: 0;
+    }
+  }
+
+  &-inline {
+    display: inline-block;
+    padding: 0 @h-spacing-lg;
+  }
+
+  &-small {
+    font-size: @button-font-size-sm;
+    height: @button-height-sm;
+    line-height: @button-height-sm;
+    padding: 0 @h-spacing-lg;
+    border-radius: @button-radius;
+  }
+
+  &-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > span {
+      line-height: 0;
+    }
+  }
+
+  > .ryt-icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 5px;
+  }
+  &-group {
+    display: block;
+    .@{buttonPrefixCls} {
+      width: 100%;
+      flex: 1;
+    }
+    .@{buttonPrefixCls}:not(:last-child) {
+      margin-bottom: @h-spacing-lg;
+    }
+  }
+  &-group-inline {
+    display: flex;
+    .@{buttonPrefixCls} {
+      width: 100%;
+      flex: 1;
+    }
+    .@{buttonPrefixCls}:not(:last-child) {
+      margin-right: @h-spacing-lg;
+    }
+  }
+}
+//React点击效果样式,不是React项目可删除
+.@{tappableActivePrefixCls} {
+  opacity: 0.8;
+}

@@ -1,0 +1,44 @@
+@import "../../../../style/config.less";
+
+.ryt-msg {
+    padding-top: @rytMsgPaddingTop;
+    text-align: center;
+}
+.ryt-msg-icon-area {
+    margin-bottom: @rytMsgIconGap;
+}
+.ryt-msg-text-area {
+    margin-bottom: @rytMsgTextGap;
+    padding:0 20px * @hd;
+}
+.ryt-msg-text-area a{
+    color:@color-link;
+}
+.ryt-msg-title {
+    margin-bottom: @rytMsgTitleGap;
+    font-weight: 400;
+    font-size: 20px  * @hd;
+}
+.ryt-msg-desc {
+    font-size: @font-size-base;
+    color: @color-text-caption;
+}
+.ryt-msg-opr-area {
+    margin-bottom: @rytMsgOprGap;
+}
+.ryt-msg-extra-area {
+    margin-bottom: @rytMsgExtraAreaGap;
+    font-size: @font-size-base;
+    color: @color-text-caption;
+    a{color: @color-link;}
+}
+
+@media screen and (min-height: @rytMsgExtraAreaOfMinHeight) {
+    .ryt-msg-extra-area {
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+    }
+}

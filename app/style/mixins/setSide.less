@@ -1,0 +1,194 @@
+@import "../themes/default";
+/* ---------------------- 设置一像素的边 ---------------------- */
+// after before 定义
+.setTopLine(@c: @border-color-base) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 1px;
+  border-top: 1px solid @c;
+  color: @c;
+  transform-origin: 0 0;
+  transform: scaleY(0.5);
+}
+
+.setBottomLine(@c: @border-color-base) {
+  display: block;
+  content: " ";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 1px;
+  border-bottom: 1px solid @c;
+  color: @c;
+  transform-origin: 0 100%;
+  transform: scaleY(0.5);
+}
+
+.setLeftLine(@c: @border-color-base) {
+  content: " ";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-left: 1px solid @c;
+  color: @c;
+  transform-origin: 0 0;
+  transform: scaleX(0.5);
+}
+
+.setRightLine(@c: @border-color-base) {
+  content: " ";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 1px;
+  bottom: 0;
+  border-right: 1px solid @c;
+  color: @c;
+  transform-origin: 100% 0;
+  transform: scaleX(0.5);
+}
+
+// after 定义
+.setOnePxBySide(@direction:left;@color:@border-color-base)
+  when
+  (@direction = top) {
+  position: relative;
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    height: 1px; /*no*/
+    border-top: 1px solid @color; /*no*/
+    color: @color;
+    transform-origin: 0 0;
+    // transform: scaleY(0.5);
+    box-sizing: border-box;
+  }
+}
+.setOnePxBySide(@direction:left;@color:@border-color-base)
+  when
+  (@direction = bottom) {
+  position: relative;
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 1px; /*no*/
+    border-bottom: 1px solid @color; /*no*/
+    color: @color;
+    transform-origin: 0 100%;
+    // transform: scaleY(0.5);
+    box-sizing: border-box;
+  }
+}
+
+.setOnePxBySide(@direction:left;@color:@border-color-base)
+  when
+  (@direction = left) {
+  position: relative;
+  &:after {
+    content: " ";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%; /*no*/
+    border-left: 1px solid @color; /*no*/
+    color: @color;
+    transform-origin: 0 100%;
+    transform: scaleY(0.5);
+    box-sizing: border-box;
+  }
+}
+
+.setOnePxBySide(@direction:left;@color:@border-color-base)
+  when
+  (@direction = right) {
+  position: relative;
+  &:after {
+    content: " ";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    height: 100%; /*no*/
+    border-right: 1px solid @color; /*no*/
+    color: @color;
+    transform-origin: 0 100%;
+    // transform: scaleY(0.5);
+    box-sizing: border-box;
+  }
+}
+
+// 间距线定义
+.hairline-top(@color: @border-color-base, @width: @border-width-sm) {
+  border-top: @width solid @color;
+}
+
+.hairline-bottom(@color: @border-color-base, @left: 0, @width: @border-width-sm) {
+  // 注意：如果元素的 overflow 有 scroll 出现，其伪元素 绝对定位 显示将出错，例如 bottom: 0
+  &:after {
+    display: block;
+    position: absolute;
+    content: "";
+    left: @left;
+    bottom: 0px;
+    right: auto;
+    top: auto;
+    width: 100%;
+    height: 1px;
+    border-bottom: @width solid @color;
+  }
+}
+
+.hairline-right(@color: @border-color-base) {
+  &:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    left: auto;
+    bottom: auto;
+    width: @border-width-sm;
+    height: 100%;
+    background-color: @color;
+    display: block;
+  }
+}
+
+.hairline-remove-right-bottom {
+  html:not([data-scale]) & {
+    &:after {
+      display: none;
+    }
+  }
+
+  html[data-scale] & {
+    border-right: 0;
+    border-bottom: 0;
+  }
+}
+
+// For left and top
+.hairline-remove-left-top() {
+  html:not([data-scale]) & {
+    &:before {
+      display: none;
+    }
+  }
+
+  html[data-scale] & {
+    border-left: 0;
+    border-top: 0;
+  }
+}

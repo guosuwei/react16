@@ -1,0 +1,132 @@
+@import "../../../../style/config.less";
+@tabBarPrefixCls: ryt-tab-bar;
+.@{tabBarPrefixCls} {
+  overflow: hidden;
+  height: 100%;
+  background: #fff;
+  &-bar {
+    //position: relative;
+    display: flex;
+    text-align: center;
+    box-sizing: border-box;
+    .setOnePxBySide(top);
+    padding: @v-spacing-sm 0;
+    background-color: @tab-bar-bg-color;
+    position: absolute;
+    width: 100%;
+    height: @tab-bar-height;
+    bottom: 0;
+    z-index: 9;
+  }
+  &-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-tab {
+    flex: 1;
+  }
+  &-nav-img {
+    > img {
+      width: @icon-size-md;
+      height: @icon-size-md;
+    }
+    > p {
+      margin: 0 !important;
+      padding: 0 !important;
+      font-size: @font-size-icontext;
+      line-height: 1;
+    }
+  }
+  &-icon {
+    > p {
+      margin: 0 !important;
+      padding: 0 !important;
+      font-size: @font-size-icontext;
+      line-height: 1;
+    }
+  }
+  &-no-badge {
+    .ryt-badge-area {
+      display: none;
+    }
+  }
+  .ryt-badge-text {
+    top: -3px;
+  }
+  .ryt-badge-dot {
+    top: -1px;
+  }
+  &-nav-container {
+    width: 100%;
+  }
+  &-ink-bar {
+    position: absolute;
+  }
+  &-tab-active {
+    &.ryt-tab-bar-tab {
+      color: @tab-bar-active-font-color;
+    }
+    .ryt-icon {
+      color: @tab-bar-active-font-color;
+    }
+  }
+  &-tab-disabled {
+    &.ryt-tab-bar-tab {
+      color: lighten(@tab-bar-font-color, 35%);
+    }
+    .ryt-icon {
+      color: lighten(@tab-bar-font-color, 35%);
+    }
+  }
+  &-content {
+    display: block;
+    zoom: 1;
+    flex-direction: row;
+    position: relative; //height: 100%;
+    height: 100%;
+    // z-index: 1;
+    padding-bottom: @tab-bar-height;
+    box-sizing: border-box;
+    &-animated {
+      display: flex;
+      // transition: transform @effect-duration @easing-in-out,
+      //   margin-left @effect-duration @easing-in-out,
+      //   margin-top @effect-duration @easing-in-out;
+      // will-change: transform;
+      .@{tabBarPrefixCls}-tabpane {
+        flex-shrink: 0;
+      }
+    }
+  }
+  &-animation {
+    .ryt-tab-bar-content-animated {
+      display: flex;
+      transition: transform @effect-duration @easing-in-out,
+        margin-left @effect-duration @easing-in-out,
+        margin-top @effect-duration @easing-in-out;
+      will-change: transform;
+      .@{tabBarPrefixCls}-tabpane {
+        flex-shrink: 0;
+      }
+    }
+  }
+  &-tabpane {
+    display: block;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+  }
+  &-tabpane-active {
+    display: block;
+    flex-shrink: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+  }
+}
+
+
+@easing-in-out: cubic-bezier(0.35, 0, 0.25, 1);
+@effect-duration: 0.3s;

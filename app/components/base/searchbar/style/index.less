@@ -1,0 +1,119 @@
+@import "../../../../style/config.less";
+.ryt-search-bar {
+  position: relative;
+  padding: @v-spacing-md @h-spacing-md;
+  display: flex;
+  box-sizing: border-box;
+  background-color: #efeff4;
+  &:before {
+    .setTopLine(#d7d6dc);
+  }
+  &:after {
+    .setBottomLine(#d7d6dc);
+  }
+  &.ryt-search-bar-focusing {
+    .ryt-search-bar-cancel-btn {
+      display: block;
+    }
+    .ryt-search-bar-label {
+      display: none;
+    }
+  }
+}
+.ryt-search-bar-form {
+  position: relative;
+  flex: auto;
+  background-color: #efeff4;
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 200%;
+    height: 200%;
+    transform: scale(0.5);
+    transform-origin: 0 0;
+    border-radius: 10px;
+    border: 1px solid #e6e6ea;
+    box-sizing: border-box;
+    background: #ffffff;
+  }
+}
+.ryt-search-bar-box {
+  position: relative;
+  padding-left: 30px * @hd;
+  padding-right: 30px * @hd;
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1;
+  .ryt-search-bar-input {
+    padding: @v-spacing-xs 0;
+    width: 100%;
+    height: 22px * @hd;
+    border: 0;
+    font-size: @font-size-base;
+    line-height: 22px * @hd;
+    box-sizing: content-box;
+    background: transparent;
+    &:focus {
+      outline: none;
+    }
+  }
+  .ryt-icon-search {
+    position: absolute;
+    left: @h-spacing-md;
+    top: 5px * @hd;
+    line-height: 28px * @hd;
+  }
+  .ryt-icon-clear {
+    position: absolute;
+    top: 7px * @hd;
+    right: 8px * @hd;
+    // padding: 0 @h-spacing-md;
+    // line-height: 28px * @hd;
+  }
+}
+.ryt-search-bar-label {
+  position: absolute;
+  top: 1px * @hd;
+  right: 1px * @hd;
+  bottom: 1px * @hd;
+  left: 1px * @hd;
+  z-index: 2;
+  border-radius: @radius-sm;
+  text-align: center;
+  color: #9b9b9b;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  span {
+    display: inline-block;
+    font-size: @font-size-base;
+    vertical-align: middle;
+  }
+  .ryt-icon-search {
+    margin-right: @h-spacing-sm;
+  }
+}
+.ryt-search-bar-cancel-btn {
+  display: none;
+  margin-left: @h-spacing-md;
+  line-height: 28px * @hd;
+  color: @color-link;
+  white-space: nowrap;
+  font-size: @font-size-base;
+  transition: transform 0.3s;
+}
+.ryt-search-bar-input:not(:valid) ~ .ryt-icon-clear {
+  display: none;
+}
+
+//去掉input[search]默认的clear button
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  display: none;
+}

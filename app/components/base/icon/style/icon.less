@@ -1,0 +1,156 @@
+@import "../../../../style/config.less";
+/* ------------------------------- 引入Mixins SVG 默认图标 ------------------------------------ */
+@iconPrefixCls: ryt-icon;
+.@{iconPrefixCls} {
+  fill: currentColor;
+  background-size: contain;
+  width: @icon-size-md;
+  height: @icon-size-md;
+
+  &-xxs {
+    width: @icon-size-xxs;
+    height: @icon-size-xxs;
+  }
+
+  &-xs {
+    width: @icon-size-xs;
+    height: @icon-size-xs;
+  }
+
+  &-sm {
+    width: @icon-size-sm;
+    height: @icon-size-sm;
+  }
+
+  &-md {
+    width: @icon-size-md;
+    height: @icon-size-md;
+  }
+
+  &-lg {
+    width: @icon-size-lg;
+    height: @icon-size-lg;
+  }
+
+  &-l {
+    width: @icon-size-l;
+    height: @icon-size-l;
+  }
+
+  &-xl {
+    width: @icon-size-xl;
+    height: @icon-size-xl;
+  }
+  
+  &-big {
+    width: @icon-size-big;
+    height: @icon-size-big;
+  }
+  // 占位空图标
+  &-empty {
+    .svgIconSet();
+  }
+  // 加载图标
+  &-loading {
+    .svgIconSet();
+    .ryt-am-infinite(1s, turn);
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='120' height='120' viewBox='0 0 100 100'%3E%3Cpath fill='none' d='M0 0h100v100H0z'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23E9E9E9' rx='5' ry='5' transform='translate(0 -30)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23989697' rx='5' ry='5' transform='rotate(30 105.98 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%239B999A' rx='5' ry='5' transform='rotate(60 75.98 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23A3A1A2' rx='5' ry='5' transform='rotate(90 65 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23ABA9AA' rx='5' ry='5' transform='rotate(120 58.66 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23B2B2B2' rx='5' ry='5' transform='rotate(150 54.02 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23BAB8B9' rx='5' ry='5' transform='rotate(180 50 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23C2C0C1' rx='5' ry='5' transform='rotate(-150 45.98 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23CBCBCB' rx='5' ry='5' transform='rotate(-120 41.34 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23D2D2D2' rx='5' ry='5' transform='rotate(-90 35 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23DADADA' rx='5' ry='5' transform='rotate(-60 24.02 65)'/%3E%3Crect width='7' height='20' x='46.5' y='40' fill='%23E2E2E2' rx='5' ry='5' transform='rotate(-30 -5.98 65)'/%3E%3C/svg>");
+  }
+  // 清除
+  &-clear {
+    .svgIconSet();
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg width='16' height='16' viewBox='0 0 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg'><g id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><circle id='Oval-98' fill-opacity='0.4' fill='#404040' cx='8' cy='8' r='8'></circle><path d='M11.8979743,11.8990375 L11.8979743,11.8990375 C11.7633757,12.0336542 11.5447877,12.0336542 11.4101891,11.8990375 L8,8.48838931 L4.5887341,11.8990375 C4.45413554,12.0336542 4.23554748,12.0336542 4.10094892,11.8990375 L4.10094892,11.8990375 C3.96635036,11.7644208 3.96635036,11.5458033 4.10094892,11.4111866 L7.51221482,8.00053847 L4.10202571,4.58881335 C3.96742715,4.45419667 3.96742715,4.23557919 4.10202571,4.10096251 L4.10202571,4.10096251 C4.23662427,3.96634583 4.45521233,3.96634583 4.58981089,4.10096251 L8,7.51268762 L11.4112659,4.10203944 C11.5458645,3.96742276 11.7644525,3.96742276 11.8990511,4.10203944 L11.8990511,4.10203944 C12.0336496,4.23665612 12.0336496,4.45527361 11.8990511,4.58989029 L8.48778518,8.00053847 L11.8979743,11.4122636 C12.0325729,11.5468803 12.0325729,11.7644208 11.8979743,11.8990375 L11.8979743,11.8990375 Z' id='Shape' fill='#FFFFFF' transform='translate(8.000000, 8.000000) scale(1, -1) translate(-8.000000, -8.000000) '></path></g></svg>");
+  }
+  // 关闭-白色
+  &-close-white {
+    .svgIconSet();
+    background-image: url("data:image/svg+xml;charset=utf-8,<svg width='16' height='16' viewBox='0 0 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg'><g id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'><circle id='Oval-98' fill-opacity='0.4' fill='#ffffff' cx='8' cy='8' r='8'></circle><path d='M11.8979743,11.8990375 L11.8979743,11.8990375 C11.7633757,12.0336542 11.5447877,12.0336542 11.4101891,11.8990375 L8,8.48838931 L4.5887341,11.8990375 C4.45413554,12.0336542 4.23554748,12.0336542 4.10094892,11.8990375 L4.10094892,11.8990375 C3.96635036,11.7644208 3.96635036,11.5458033 4.10094892,11.4111866 L7.51221482,8.00053847 L4.10202571,4.58881335 C3.96742715,4.45419667 3.96742715,4.23557919 4.10202571,4.10096251 L4.10202571,4.10096251 C4.23662427,3.96634583 4.45521233,3.96634583 4.58981089,4.10096251 L8,7.51268762 L11.4112659,4.10203944 C11.5458645,3.96742276 11.7644525,3.96742276 11.8990511,4.10203944 L11.8990511,4.10203944 C12.0336496,4.23665612 12.0336496,4.45527361 11.8990511,4.58989029 L8.48778518,8.00053847 L11.8979743,11.4122636 C12.0325729,11.5468803 12.0325729,11.7644208 11.8979743,11.8990375 L11.8979743,11.8990375 Z' id='Shape' fill='#FFFFFF' transform='translate(8.000000, 8.000000) scale(1, -1) translate(-8.000000, -8.000000) '></path></g></svg>");
+  }
+  // 箭头
+  &-arrow {
+    .svgIconSet();
+    background-image: url("../image/arrow.png");
+    background-size: 100%;
+  }
+  // 箭头-向右
+  &-arrow-right {
+    .svgIconSet();
+    transform: rotate(45deg);
+    background-image: url("../image/arrow.png");
+    background-size: 100%;
+  }
+  // 箭头-向上
+  &-arrow-up {
+    .svgIconSet();
+    transform: rotate(-90deg);
+    background-image: url("../image/arrow.png");
+    background-size: 100%;
+  }
+  // 箭头-向下
+  &-arrow-dn {
+    .svgIconSet();
+    transform: rotate(90deg);
+    background-image: url("../image/arrow.png");
+    background-size: 100%;
+  }
+  // 搜索
+  &-search {
+    .svgIconSet();
+    background-image: url("../image/search.png");
+    background-size: 100%;
+  }
+  // 提示
+  &-tips {
+    .svgIconSet();
+    background-image: url("../image/tips.png");
+    background-size: 100%;
+  }
+  // 错误
+  &-error {
+    .svgIconSet();
+    background-image: url("../image/error.png");
+    background-size: 100%;
+  }
+  // 成功
+  &-success {
+    .svgIconSet();
+    background-image: url("../image/success.png");
+    background-size: 100%;
+  }
+  // 警告
+  &-warning {
+    .svgIconSet();
+    background-image: url("../image/warning.png");
+    background-size: 100%;
+  }
+  // 提示-白色
+  &-tips-white {
+    .svgIconSet();
+    background-image: url("../image/tips-white.png");
+    background-size: 100%;
+  }
+  // 错误-白色
+  &-error-white {
+    .svgIconSet();
+    background-image: url("../image/error-white.png");
+    background-size: 100%;
+  }
+  // 成功-白色
+  &-success-white {
+    .svgIconSet();
+    background-image: url("../image/success-white.png");
+    background-size: 100%;
+  }
+  // 警告-白色
+  &-warning-white {
+    .svgIconSet();
+    background-image: url("../image/warning-white.png");
+    background-size: 100%;
+  }
+}
+.svgIconSet() {
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  // background-position: 50% 50%;
+}

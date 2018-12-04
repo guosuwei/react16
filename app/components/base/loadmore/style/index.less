@@ -1,0 +1,47 @@
+@import "../../../../style/config.less";
+
+.ryt-loadmore {
+  width: 65%;
+  margin: @h-spacing-lg auto;
+  line-height: @font-size-caption;
+  font-size: @font-size-base;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .ryt-icon {
+    margin: 0 @h-spacing-sm;
+  }
+}
+.ryt-loadmore-tips {
+  display: inline-block;
+  vertical-align: middle;
+}
+.ryt-loadmore-line {
+  border-top: @border-width-sm solid @border-color-base;
+  margin-top: 24px * @hd;
+  .ryt-loadmore-tips {
+    position: relative;
+    top: -@v-spacing-md;
+    padding: 0 @h-spacing-sm;
+    background-color: #f9f9f9;
+    color: @color-text-caption;
+  }
+}
+.ryt-loadmore-dot {
+  .ryt-loadmore-tips {
+    padding: 0;
+    background: initial;
+    &:before {
+      content: " ";
+      width: 5px * @hd;
+      height: 5px * @hd;
+      border-radius: 50%;
+      background-color: @border-color-base;
+      display: inline-block;
+      position: relative;
+      vertical-align: 0;
+      top: -5px * @hd / 2;
+    }
+  }
+}

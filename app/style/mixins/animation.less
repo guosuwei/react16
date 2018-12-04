@@ -1,0 +1,77 @@
+@import "../themes/default";
+/* 动画 */
+
+/**--------------------------------------------------------------------=====
+  * ryt-am
+  **/
+
+.ryt-am(@time, @name) {
+    animation-duration: @time;
+    animation-fill-mode: both;
+    animation-timing-function: cubic-bezier(0.55, 0, 0.55, 0.2);
+    animation-name: @name;
+}
+
+.ryt-am-infinite(@time, @name) {
+    animation: @name @time steps(12, end) infinite;
+}
+
+//转动
+@keyframes turn {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes topTipsUpToDn {
+    0% {
+        top: -@h-spacing-lg;
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+        top: @v-spacing-md;
+    }
+}
+
+//渐进
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+//渐出
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes fadeInDn {
+    0% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate3d(0, 100%, 0);
+    }
+}
